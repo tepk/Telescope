@@ -1,2 +1,6 @@
 {
+  "categories" : "Типы работ",
+  "add_and_remove_categories" : "Добавить/удалить тип работ",
+  "all_categories" : "Все типы",
+  "invalid_category" : "Простите, таких работ не выполняем :("
 }

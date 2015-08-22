@@ -1,0 +1,12 @@
+<template name="custom_comment_list">
+
+      <ul class="comments comment-list" aria-live="polite">
+        {{#each child_comments}}
+          {{#if showProposal}}
+            {{> comment_item}}
+          {{/if}}
+        {{/each}}
+      </ul>
+    {{> modules "commentThreadBottom"}}
+
+</template>
