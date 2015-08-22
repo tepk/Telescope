@@ -38,7 +38,7 @@ ejson@1.0.6
 email@1.0.6
 facebook@1.2.1
 fastclick@1.0.3
-fortawesome:fontawesome@4.3.0
+fortawesome:fontawesome@4.4.0
 fourseven:scss@3.2.0
 geojson-utils@1.0.3
 handlebars@1.0.3
@@ -132,7 +132,7 @@ telescope:getting-started@0.23.0
 telescope:i18n@0.23.0
 telescope:invites@0.23.0
 telescope:kadira@0.23.0
-telescope:lib@0.23.0
+telescope:lib@0.23.1
 telescope:messages@0.23.0
 telescope:migrations@0.23.0
 telescope:newsletter@0.23.0
@@ -163,6 +163,6 @@ underscore@1.0.3
 url@1.0.4
 useraccounts:core@1.11.1
 useraccounts:unstyled@1.11.1
-utilities:avatar@0.8.3
+utilities:avatar@0.8.2
 webapp@1.2.0
 webapp-hashing@1.0.3
