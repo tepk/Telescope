@@ -11,7 +11,7 @@ Telescope.schemas.votes = new SimpleSchema({
     optional: true
   },
   votedAt: {
-    type: Date, 
+    type: Date,
     optional: true
   }
 });
@@ -50,6 +50,50 @@ Telescope.schemas.userData = new SimpleSchema({
     profile: true,
     editableBy: ["member", "admin"]
   },
+
+  categories: {
+    type: [String],
+    label: 'Categories',
+    optional: true,
+    editableBy: ["member", "admin"],
+    autoform: {
+      instructions: 'Posts will be assigned to this category.',
+      noselect: true,
+      editable: true,
+      options: function () {
+        var categories = Categories.find().map(function (category) {
+          return {
+            value: category._id,
+            label: category.name
+          };
+        });
+        return categories;
+      }
+    }
+  },
+  userType: {
+    type: [String],
+    label: 'Просматривать',
+    optional: true,
+    editableBy: ["member", "admin"],
+    autoform: {
+      instructions: 'Вам будут показываться выбранные посты',
+      noselect: true,
+      editable: true,
+      options: function () {
+        return [{
+          value: UserTypes.CUSTOMER,
+          label: "предложения"
+        },
+          {
+            value: UserTypes.WORKER,
+            label: "заказы"
+          }
+        ]
+      }
+    }
+  },
+
   /**
     An array containing comment downvotes
   */
@@ -179,7 +223,7 @@ Telescope.schemas.userData = new SimpleSchema({
  * Users schema
  * @type {SimpleSchema}
  */
-Users.schema = new SimpleSchema({ 
+Users.schema = new SimpleSchema({
   _id: {
     type: String,
     public: true,

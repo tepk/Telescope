@@ -32,7 +32,7 @@ Posts.schema = new SimpleSchema({
   /**
     URL
   */
-  url: {
+  /* url: {
     type: String,
     optional: true,
     max: 500,
@@ -204,7 +204,7 @@ Posts.schema = new SimpleSchema({
     optional: true
   },
   /**
-    The post author's `_id`. 
+    The post author's `_id`.
   */
   userId: {
     type: String,
