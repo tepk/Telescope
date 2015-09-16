@@ -1,4 +1,4 @@
-AutoForm.addInputType("bootstrap-postthumbnail", {
+ AutoForm.addInputType("bootstrap-postthumbnail", {
   template: "afPostThumbnail"
 });
 

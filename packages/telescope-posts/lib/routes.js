@@ -150,13 +150,13 @@ Posts.controllers.page = RouteController.extend({
     if (post) {
 
       // Replace URL
-      if (post.slug !== this.params.slug) {
+      /* if (post.slug !== this.params.slug) {
         window.history.replaceState({}, "", post.getPageUrl());
-      }
+      } */
       $('link[rel="canonical"]').attr("href", post.getPageUrl(true));
 
       // Set SEO properties
-      
+
       var props = {meta: {}, og: {}, twitter: {}};
 
       // Set site name
@@ -185,7 +185,7 @@ Posts.controllers.page = RouteController.extend({
       if (!!Settings.get("twitterAccount")) {
         props.twitter.site = Settings.get("twitterAccount");
       }
-      
+
       SEO.set(props);
 
       $('title').text(post.title);

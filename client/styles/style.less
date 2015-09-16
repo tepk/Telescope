@@ -8,7 +8,9 @@ body {
   }
 
   .content-wrapper {
-    max-width: 700px;
+    float: right;
+    min-width: 900px;
+    max-width: 900px;
     .posts-day-heading {
       text-transform: capitalize;
     }
@@ -45,9 +47,24 @@ body {
 .left-ear {
   /* this is an element on the left of the screen, that contains information, directed to you profile's spec */
   position: absolute;
-  left: -270px;
+  border-radius: 5px;
+  left: -350px;
   top: 33px;
-  width: 250px;
-  min-height: 300px;
+  width: 350px;
+  min-height: 400px;
   background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  padding: 10px 20px 10px 20px;
 }
+
+.left-ear h4 {
+  padding-bottom: 10px;
+}
+
+
+.left-ear a {
+  text-decoration: underline;
+  font-weight: 400;
+}
+

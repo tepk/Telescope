@@ -9,7 +9,7 @@ var thumbnailProperty = {
     }
   }
 };
-Posts.addField(thumbnailProperty);
+/* Posts.addField(thumbnailProperty); */
 
 var mediaProperty = {
   fieldName: 'media',

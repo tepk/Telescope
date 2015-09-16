@@ -1,0 +1,27 @@
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    background-size: contain;
+    height: 100px;
+    width: 100px;
+    animation: elastic-rotation 2.33s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('/images/logo.gif');
+}
+
+
+@keyframes elastic-rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+
+    }
+
+
+}

@@ -72,22 +72,22 @@ Telescope.schemas.userData = new SimpleSchema({
     }
   },
   userType: {
-    type: [String],
-    label: 'Просматривать',
+    type: String,
+    label: 'Тип профайла',
     optional: true,
     editableBy: ["member", "admin"],
     autoform: {
       instructions: 'Вам будут показываться выбранные посты',
-      noselect: true,
+      noselect: false,
       editable: true,
       options: function () {
         return [{
           value: UserTypes.CUSTOMER,
-          label: "предложения"
+          label: "заказчик"
         },
           {
             value: UserTypes.WORKER,
-            label: "заказы"
+            label: "исполнитель"
           }
         ]
       }

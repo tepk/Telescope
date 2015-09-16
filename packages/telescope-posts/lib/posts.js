@@ -29,6 +29,13 @@ Posts.schema = new SimpleSchema({
       type: "bootstrap-datetimepicker"
     }
   },
+
+  /** is work finished? **/
+
+  /** isFinished: {
+    type: Boolean
+  },
+**/
   /**
     URL
   */
