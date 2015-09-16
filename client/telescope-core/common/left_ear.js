@@ -3,9 +3,5 @@ Template.left_ear.onCreated(function() {
 })
 
 
-Template.left_ear.helpers({
-    openTasks: function() {
-      return Posts.find({userId: Meteor.user()._id}).fetch()
-    }
-});
+
 

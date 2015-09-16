@@ -22,11 +22,21 @@
               </tr>
           {{/each}}
             <!-- Here we insert favourite work categories -->
-          <br /><h3>Спецификация бригады</h3>
-          {{#each categories}}
 
-              <div class="favoriteCategory">{{this.name}}</div>
-          {{/each}}
+              <br/>
+          {{#if isWorker}}
+              <h3>Спецификация бригады</h3>
+            {{#each categories}}
+
+                <div class="favoriteCategory">{{this.name}}</div>
+            {{/each}}
+          {{else}}
+              <h3>Открытые запросы заказчика</h3>
+            {{#each openTasks}}
+                <a href="/posts/{{_id}}">{{title}}</a><br/>
+            {{/each}}
+          {{/if}}
+
             <!-- end of insert -->
         </table>
       {{#if canEditProfile}}
