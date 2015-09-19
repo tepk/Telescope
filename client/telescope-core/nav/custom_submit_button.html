@@ -1,0 +1,11 @@
+<template name="custom_submit_button">
+  {{#if canPost}}
+      <div class="submit-button {{moduleClass}}">
+        {{#if isWorker}}
+            <a id="submit" class="submit btn btn-primary" href="/submit">{{_ "worker_post"}}</a>
+        {{else}}
+            <a id="submit" class="submit btn btn-primary" href="/submit">{{_ "customer_post"}}</a>
+        {{/if}}
+      </div>
+  {{/if}}
+</template>

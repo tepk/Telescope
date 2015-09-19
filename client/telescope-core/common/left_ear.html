@@ -3,10 +3,14 @@
     <div class="left-ear">
       {{#if Template.subscriptionsReady}}
           <!-- This is displayed when all data is ready. -->
-          <h4>Ваши открытые заказы:</h4>
-          {{#each openTasks}}
-              <a href="/posts/{{_id}}">{{title}}</a><br/>
-          {{/each}}
+        {{#if isWorker}}
+            <h4>Ваши предложения:</h4>
+        {{else}}
+            <h4>Ваши открытые заказы:</h4>
+        {{/if}}
+        {{#each openTasks}}
+            <a href="/posts/{{_id}}">{{title}}</a><br/>
+        {{/each}}
       {{else}}
           <div class="loader"></div>
 
