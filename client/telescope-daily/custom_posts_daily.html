@@ -1,15 +1,19 @@
 <template name="custom_posts_daily">
-  <div class="posts-daily">
-    {{#each days}}
-      {{> before_day}}
-      <div class="posts-day">
-        {{> day_heading date=date}}
-        {{> posts_list_controller context}}
+  {{#if currentUser}}
+      <div class="posts-daily">
+        {{#each days}}
+          {{> before_day}}
+            <div class="posts-day">
+              {{> day_heading date=date}}
+              {{> posts_list_controller context}}
+            </div>
+          {{> after_day}}
+        {{/each}}
+        {{#if isMoreDaysAvailable}}
+          {{> load_more_days handler=loadMoreHandler}}
+        {{/if}}
       </div>
-      {{> after_day}}
-    {{/each}}
-    {{#if isMoreDaysAvailable}}
-    {{> load_more_days handler=loadMoreHandler}}
-    {{/if}}
-  </div>
+  {{else}}
+      <div class="welcome"></div>
+  {{/if}}
 </template>
