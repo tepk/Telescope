@@ -7,11 +7,88 @@ body {
   left: 0;
   background: url("/images/welcome.jpg");
   top: 60px;
-  background-position-y: 0;
+  background-position: top 0;
   min-width: 100%;
   min-height: 750px;
   background-repeat: repeat-x;
+  & * {
+    text-align: center;
+    color: #fff;
+  }
+  *:first-child {
+    margin-top: 50px;
+  }
 }
+
+.greetings {
+  padding-top: 100px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  width: 60%;
+  max-width: 700px !important;
+  min-height: 300px;
+  margin: 0px auto;
+}
+
+.atSignIn {
+  background: url("/images/welcome.jpg");
+  background-position-y: 60px;
+  background-repeat: repeat-x;
+  .content-wrapper {
+    float: none !important;
+    min-width: initial !important;
+    max-width: initial !important;
+    padding-top: 40px;
+  }
+  .at-form {
+    margin: 0 auto;
+    width: 60%;
+    max-width: 700px !important;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    width: 60%;
+    min-height: 300px;
+      .at-title {
+        display: none;
+      }
+    & * {
+      text-align: center;
+      color: #fff;
+      font-weight: normal;
+    }
+    h3 {
+      text-align: left;
+    }
+    #at-btn {
+      margin-left: 90%;
+    }
+  }
+}
+
+.signOut {
+  background: url("/images/welcome.jpg");
+  background-position-y: 60px;
+  background-repeat: repeat-x;
+  .content-wrapper {
+    float: none !important;
+    min-width: initial !important;
+    max-width: initial !important;
+    padding-top: 40px;
+    .grid-block {
+      margin: 0 auto;
+      width: 60%;
+      max-width: 700px !important;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 3px;
+      width: 60%;
+      min-height: 100px;
+      text-align: center;
+      color: #fff;
+      font-weight: normal;
+    }
+  }
+}
+
 .thishidden {
   visibility: hidden !important;
 }
@@ -93,3 +170,5 @@ body {
     }
   }
 }
+
+

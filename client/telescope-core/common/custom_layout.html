@@ -1,6 +1,6 @@
 <template name="custom_layout">
   {{> css}}
-    <div class="outer-wrapper {{currentPage}} {{navLayout}}">
+    <div class="outer-wrapper {{currentPage}} {{currentRoute}} {{navLayout}}">
       {{> mobile_nav}}
         <div class="inner-wrapper template-{{pageName}}">
           {{> header}}
@@ -8,17 +8,13 @@
             <div class="content-wrapper">
               {{# if currentUser}}
                 {{> left_ear}}
-
-
               {{/if}}
-
               {{> messages}}
               {{> yield "adminMenu"}}
               {{> modules zone="top" zoneClass="top"}}
               {{> yield}}
               {{> modules zone="footer" zoneClass="footer"}}
             </div>
-
             <div class="overlay hidden"></div>
         </div>
       {{{extraCode}}}
