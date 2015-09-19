@@ -21,19 +21,29 @@ body {
 }
 
 .greetings {
-  padding-top: 100px;
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 3px;
   width: 60%;
   max-width: 700px !important;
   min-height: 300px;
   margin: 0px auto;
+  p {
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 0.9em;
+  }
+  h1 {
+    text-align: center;
+    padding-bottom: 30px;
+  }
 }
 
 .atSignIn {
   background: url("/images/welcome.jpg");
   background-position-y: 60px;
   background-repeat: repeat-x;
+
   .content-wrapper {
     float: none !important;
     min-width: initial !important;
@@ -48,10 +58,21 @@ body {
     border-radius: 3px;
     width: 60%;
     min-height: 300px;
-      .at-title {
-        display: none;
-      }
-    & * {
+    a {
+      text-decoration: underline;
+      font-weight: normal;
+    }
+    a:hover {
+      text-decoration: none;
+      font-weight: normal;
+    }
+    .at-title {
+      display: none;
+    }
+    .at-input input {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    & *:not(a) {
       text-align: center;
       color: #fff;
       font-weight: normal;
