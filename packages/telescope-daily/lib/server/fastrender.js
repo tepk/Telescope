@@ -18,7 +18,7 @@ FastRender.route('/daily/:daysCount?',function (params) {
   var days = getDays(daysCount);
 
   days.forEach(function (day) {
-    
+
     var subscriptionTerms = {
       view: "singleday",
       date: day.date,

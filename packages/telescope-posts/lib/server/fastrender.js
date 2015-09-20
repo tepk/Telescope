@@ -28,7 +28,8 @@ Posts.fastRenderRoutes = [
 Posts.fastRenderSubscribe = function (view, params) {
   var subscriptionTerms = {
     view: view,
-    limit: params.limit || Settings.get('postsPerPage', 10)
+    limit: params.limit || Settings.get('postsPerPage', 10),
+    categories: Posts.find({categories: Meteor.user().telescope.categories}).fetch()
   };
   this.subscribe('postsList', subscriptionTerms);
   this.subscribe('postsListUsers', subscriptionTerms);

@@ -11,6 +11,7 @@ SyncedCron.add({
       opt.postedAt = {$gt: lastAudit[0].day}
     }
     Posts.find(opt).forEach(function(post){
+
       var day = new Date(post.createdAt).setHours(0,0,0,0);
       PostsByDayAudit.upsert({day: day}, {$set: {hasPosts: true}});
     })

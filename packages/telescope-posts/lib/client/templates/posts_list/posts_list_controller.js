@@ -2,7 +2,7 @@
 
 /*
 
-This template acts as the controller that sets and manages the reactive context 
+This template acts as the controller that sets and manages the reactive context
 for the embedded postsList template. It receives its parameters from a "caller" template.
 
 */
@@ -46,6 +46,10 @@ Template.posts_list_controller.onCreated(function () {
 
     // create new subscriptionTerms object using the new limit
     var subscriptionTerms = _.extend(_.clone(terms), {limit: postsLimit}); // extend terms with limit
+    if (!subscriptionTerms.find) {
+      subscriptionTerms.find = {}
+    }
+    subscriptionTerms.find.categories = Meteor.user().telescope.categories;
 
     // use this new object to subscribe
     var postsSubscription = subscriber.subscribe('postsList', subscriptionTerms);
@@ -68,7 +72,7 @@ Template.posts_list_controller.onCreated(function () {
       instance.terms.set(subscriptionTerms);
       instance.ready.set(true);
     }
-  
+
   });
 
 });
