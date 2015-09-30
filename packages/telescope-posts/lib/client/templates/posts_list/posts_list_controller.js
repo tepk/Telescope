@@ -46,10 +46,15 @@ Template.posts_list_controller.onCreated(function () {
 
     // create new subscriptionTerms object using the new limit
     var subscriptionTerms = _.extend(_.clone(terms), {limit: postsLimit}); // extend terms with limit
-    if (!subscriptionTerms.find) {
+     if (!subscriptionTerms.find) {
       subscriptionTerms.find = {}
     }
-    subscriptionTerms.find.categories = Meteor.user().telescope.categories;
+    // subscriptionTerms.find.categories = Meteor.user().telescope.categories;
+    var user = Meteor.user();
+    if (user.telescope.userType && user.telescope.userType === UserTypes.WORKER) {
+      subscriptionTerms.find.categories = user.telescope.categories
+    }
+    /* console.log(subscriptionTerms); */
 
     // use this new object to subscribe
     var postsSubscription = subscriber.subscribe('postsList', subscriptionTerms);

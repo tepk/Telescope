@@ -26,11 +26,16 @@ Posts.fastRenderRoutes = [
 ];
 
 Posts.fastRenderSubscribe = function (view, params) {
+  console.log(this.userId);
   var subscriptionTerms = {
+    find: {},
     view: view,
-    limit: params.limit || Settings.get('postsPerPage', 10),
-    categories: Posts.find({categories: Meteor.user().telescope.categories}).fetch()
+    limit: params.limit || Settings.get('postsPerPage', 10)
   };
+  var user = Meteor.users.findOne(this.userId);
+  if (user.telescope.userType && user.telescope.userType.length === 1 && user.telescope.userType[0] === UserTypes.WORKER) {
+    subscriptionTerms.find.categories = Posts.find({categories: user.telescope.categories}).fetch()
+  }
   this.subscribe('postsList', subscriptionTerms);
   this.subscribe('postsListUsers', subscriptionTerms);
 };
